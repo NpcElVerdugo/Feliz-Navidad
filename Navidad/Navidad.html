@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Navidad</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #7B1019; /* Color rojo vino */
+            overflow: hidden; /* Evitar la barra de desplazamiento vertical */
+        }
+
+        /* Estilos para el botón */
+        #heart-button {
+            text-align: center;
+            border: none;
+            background: none;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+        }
+
+
+ /* Estilos para el botón esfera */
+        #ornament-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            width: 251px;
+            height: 251px;
+            border-radius: 250%; /* Hace que el botón tenga forma de esfera */
+            background-color: transparent; /* Color de fondo */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #ornament-button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: transparent; /* Color de la esfera */
+        }
+
+        #ornament-button img {
+            width: 250px; /* Tamaño de la imagen */
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Estilos para el árbol de Navidad */
+        #tree-section {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        #tree {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light {
+            display: inline-block;
+            width: 20px; /* Ajusta el tamaño de las esferas */
+            height: 20px; /* Ajusta el tamaño de las esferas */
+            border-radius: 50%;
+            margin: 0 7px; /* Aumenta el espacio entre las esferas */
+            opacity: 0.3;
+        }
+
+        /* Ajusta el tamaño de la esfera amarilla */
+        .light.yellow {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* Animación para las luces */
+        @keyframes blink {
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .blink-animation {
+            animation: blink 1s infinite;
+        }
+
+#gift-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+/* Estilos para la parte superior del regalo */
+#gift-button .gift-top {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid #FFD700; /* Color dorado para la parte superior */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilos para la caja del regalo */
+#gift-button .gift-box {
+    width: 50px;
+    height: 50px;
+    background-color: #228B22; /* Color verde para la caja del regalo */
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+        /* Estilos para la dedicatoria */
+        #dedicatoria {
+            display: none;
+            text-align: center;
+            max-width: 1000px; /* Ancho máximo para la dedicatoria */
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
+
+        #dedicatoria h2 {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        #dedicatoria p {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección con el botón de corazón -->
+    <div id="heart-section">
+        <button id="ornament-button" onclick="mostrarArbol()">
+            <img src="Esfera_Navidad3.gif" alt="Esfera">
+	
+    <video id="audio"  autoplay muted loop>
+        <!-- Primera canción -->
+        <source src="Dingo_Bell.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    
+    </video>
+        </button>
+    </div>
+
+
+
+    <!-- Sección con el árbol de Navidad -->
+    <div id="tree-section">
+	<p style="color: white; font-size: 24px; margin-bottom: 20px;">¡Feliz Navidad y próspero Año Nuevo!</p>
+        <div id="tree">
+<!-- Botón con forma de regalo -->
+        <button id="gift-button" onclick="mostrarDedicatoria()">
+            <div class="gift-top"></div>
+            <div class="gift-box"></div>
+        </button></div>
+    </div>
+<div id="dedicatoria" style="display: none;">
+    <h2>Feliz Navidad</h2>
+    <p>La Navidad es mucho más que regalos envueltos con cuidado y brillantes adornos que decoran nuestros hogares. Es un tiempo para reflexionar sobre los momentos compartidos, la gratitud por las bendiciones recibidas y la generosidad que brindamos a los demás.</p>
+    <p>En este período de celebración, que la paz y la felicidad inunden tu vida, trayendo consigo amor, armonía y alegría duradera. Que el espíritu de la Navidad ilumine tu corazón y te llene de esperanza, recordándote siempre el valor de la familia, la amistad y la solidaridad.</p>
+    <p>Que cada chispa de luz represente un deseo cumplido, cada risa compartida un recuerdo precioso y cada abrazo un lazo que fortalezca los lazos afectivos que nos unen. Que en esta Navidad y durante todo el año nuevo, tus días estén llenos de momentos memorables y tus sueños se hagan realidad.</p>
+    <p>Aprovechemos este tiempo para mostrar amabilidad, compasión y empatía hacia los demás. Brindemos calor a quienes lo necesitan y recordemos que la magia de la Navidad radica en dar, compartir y cuidar el uno del otro.</p>
+    <p>Mis mejores deseos para ti y los tuyos en esta temporada festiva. ¡Feliz Navidad y un próspero Año Nuevo! Que el espíritu navideño te llene de amor, paz y felicidad hoy y siempre."</p>
+   
+</div>
+
+    <script>
+        function mostrarArbol() {
+            document.getElementById('heart-section').style.display = 'none';
+            document.getElementById('tree-section').style.display = 'block';
+            mostrarArbolNavidad();
+        }
+
+        function mostrarArbolNavidad() {
+            var treeContainer = document.getElementById('tree');
+            for (var i = 0; i < 16; i++) {
+                var row = document.createElement('div');
+                var maxLights = i + 1; // El número de esferas en cada fila será igual al número de fila
+                var isRedRow = i % 3 === 2; // Verifica si es una fila roja
+                var color = isRedRow ? '#FF0000' : '#00FF00'; // Asigna el color según el patrón requerido
+                for (var j = 1; j <= maxLights; j+=2) {
+                    var light = document.createElement('div');
+                    if (i === 0 && j === 1) {
+                        light.classList.add('light', 'yellow'); // Agrega la clase 'yellow' para la primera posición (esfera amarilla)
+                        light.style.backgroundColor = '#FFFF00'; // Establece la primera esfera como amarilla
+                    } else {
+                        light.classList.add('light');
+                        light.style.backgroundColor = color; // Asigna el color del patrón
+                        light.style.animationDelay = Math.random() + 's';
+                    }
+                    row.appendChild(light);
+                }
+                treeContainer.appendChild(row);
+            }
+            encenderLuces();
+        }
+
+        function encenderLuces() {
+            var treeLights = document.querySelectorAll('#tree .light');
+            treeLights.forEach(function(light) {
+                light.classList.add('blink-animation');
+            });
+        }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var audio = document.getElementById("audio");
+    var toggleMuteButton = document.getElementById("ornament-button");
+
+    toggleMuteButton.addEventListener("click", function() {
+        toggleMute(audio);
+    });
+});
+
+function toggleMute(audio) {
+    // Cambiar el estado de mute
+    audio.muted = !audio.muted;
+}
+</script>
+
+<script>
+    function mostrarDedicatoria() {
+        // Ocultar el árbol y mostrar la dedicatoria
+        document.getElementById('tree-section').style.display = 'none';
+        document.getElementById('dedicatoria').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
